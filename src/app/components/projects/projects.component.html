@@ -1,0 +1,33 @@
+<div class="section projects-section">
+  <div class="section-header">
+    <h2><span class="hash">#</span>projetos</h2>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card"
+    *ngFor="let p of projects"
+    matRipple
+    [matRippleColor]="'rgba(124,92,252,0.05)'"
+    (click)="openProject(p.link)">
+
+    <div class="card-image">
+      <img [src]="p.image" [alt]="p.name">
+    </div>
+
+    <div class="card-inner">
+      <div class="card-top">
+          <mat-icon class="link-icon" matTooltip="Ver projeto">open_in_new</mat-icon>
+        </div>
+
+        <h3 class="project-name">{{ p.name }}</h3>
+        <h4 class="obs">{{p.observation}}</h4>
+        <p class="project-desc">{{ p.description }}</p>
+
+        <mat-chip-set class="project-tags">
+          <mat-chip *ngFor="let tag of p.tags">{{ tag }}</mat-chip>
+        </mat-chip-set>
+    </div>
+    <div class="hover-bar"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="section contact-section">
+  <div class="section-header">
+    <h2><span class="hash">#</span>contatos</h2>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-text">
+      <p>
+        Estou interessado em novas oportunidades. Se você tem um projeto,
+        uma vaga ou só quer trocar uma ideia sobre tecnologia — pode me chamar!
+      </p>
+      <p>
+        Tempo de resposta médio:
+        <strong class="teal">menos de 24h</strong>.
+      </p>
+
+      <div class="availability-badge mono">
+        <span class="dot"></span>
+        aberto a propostas
+      </div>
+    </div>
+
+    <div class="contact-list">
+      <div
+        class="contact-item"
+        *ngFor="let c of contacts"
+        matRipple
+        [matRippleColor]="'rgba(0,212,170,0.06)'"
+        (click)="open(c.href)">
+
+        <div class="contact-icon">
+          <ng-container *ngIf="c.icon?.endsWith('.svg'); else materialIcon">
+            <img [src]="c.icon" [alt]="c.label" />
+          </ng-container>
+          <ng-template #materialIcon>
+            <mat-icon>{{ c.icon }}</mat-icon>
+          </ng-template>
+        </div>
+
+        <div class="contact-info">
+          <span class="contact-label mono">{{ c.label }}</span>
+          <span class="contact-value">{{ c.value }}</span>
+        </div>
+
+        <mat-icon class="arrow-icon">arrow_outward</mat-icon>
+      </div>
+    </div>
+
+  </div>
+</div>
+

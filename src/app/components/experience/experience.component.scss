@@ -1,0 +1,86 @@
+$mono: 'JetBrains Mono', monospace;
+$accent: #7c5cfc;
+$teal: #00d4aa;
+$muted: #6b6b8a;
+$border: rgba(120, 100, 255, 0.12);
+$card: #0f0f1c;
+$text: #e8e8f2;
+
+.section {
+  background-color: $card;
+}
+
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.exp-card {
+  background: $card;
+  border: 1px solid $border;
+  padding: 2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, $accent, $teal);
+    transition: height 0.35s ease;
+  }
+
+  &:hover {
+    border-color: rgba($accent, 0.4);
+    transform: translateX(4px);
+
+    &::before { height: 100%; }
+  }
+
+  mat-divider {
+    margin: 1.25rem 0;
+    border-color: $border !important;
+  }
+}
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $text;
+  margin-bottom: 0.3rem;
+}
+
+.exp-company {
+  font-size: 1.5rem;
+  color: $muted;
+  letter-spacing: 0.02em;
+}
+
+.exp-period {
+  font-size: 1rem;
+  color: $muted;
+  white-space: nowrap;
+  padding-top: 0.2rem;
+}
+
+.exp-desc {
+  padding-top: 2rem;
+  font-size: 1rem;
+  color: $muted;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+  white-space: pre-line;
+}

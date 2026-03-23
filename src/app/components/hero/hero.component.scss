@@ -1,0 +1,162 @@
+$mono: 'JetBrains Mono', monospace;
+$accent: #7c5cfc;
+$teal: #00d4aa;
+$muted: #6b6b8a;
+$border: rgba(120, 100, 255, 0.12);
+$bg: #0a0a0f;
+$card: #0f0f1c;
+$text: #e8e8f2;
+
+.hero-wrapper {
+  background: $bg;
+  min-height: 100vh;
+  padding: 8rem 4.4rem 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 900px) { padding: 7rem 1.5rem 4rem; }
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(120, 100, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 100, 255, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  color: $teal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: $text;
+
+  .accent { color: $accent; }
+  .teal   { color: $teal; }
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: $muted;
+  line-height: 1.85;
+  margin-bottom: 2.25rem;
+  max-width: 480px;
+
+  strong { color: $text; font-weight: 500; }
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  button {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $border;
+  padding: 0.55rem 1rem;
+  font-size: 0.72rem;
+  color: $muted;
+
+  strong { color: $text; }
+
+}
+
+.hero-visual {
+  @media (max-width: 900px) { display: none; }
+}
+
+.code-card {
+  background: $card;
+  border: 1px solid $border;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $accent, $teal);
+  }
+}
+
+.code-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid $border;
+
+  span { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+
+  .filename {
+    font-size: 0.7rem;
+    color: $muted;
+    margin-left: 0.5rem;
+  }
+}
+
+.code-body {
+  padding: 1.25rem;
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: #a9b7c6;
+  white-space: pre;
+  overflow-x: auto;
+  min-height: 260px;
+}
+
+.cursor {
+  color: $accent;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+

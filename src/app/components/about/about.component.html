@@ -1,0 +1,62 @@
+<div class="section">
+  <div class="section-header">
+    <h2><span class="hash">#</span>sobre-mim</h2>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-text">
+      <p>
+        Olá, sou <strong>Gabriel Medeiros</strong>! Desenvolvedor Full-Stack
+        baseado em Campina Grande, PB.
+      </p>
+      <p>
+        Minha trajetória é um pouco incomum: me formei em
+        <strong>Engenharia Mecânica pela UFCG</strong> e, ao longo dessa
+        jornada, descobri uma paixão profunda por desenvolvimento de software.
+        Hoje estou cursando <strong>Análise e Desenvolvimento de Sistemas</strong>
+        na Unifacisa.
+      </p>
+      <p>
+        Tenho vivência em ambientes ágeis, experiência sólida com
+        <strong>Spring Boot</strong> e <strong>Angular</strong>, e me interesso
+        por arquitetura limpa, boas práticas e soluções escaláveis.
+        Aprender nunca foi uma obrigação — é o que me move.
+      </p>
+
+      <button mat-raised-button color="primary" (click)="downloadCV()">
+        <mat-icon>download</mat-icon>
+        Baixar Currículo
+      </button>
+    </div>
+
+    <div class="about-right">
+
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let s of stats">
+          <span class="stat-num mono">{{ s.value }}</span>
+          <p class="stat-label">{{ s.label }}</p>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <p class="edu-header mono">
+          <span class="teal">// </span>formação acadêmica
+        </p>
+        <div
+          class="edu-item"
+          *ngFor="let e of education; let last = last"
+          [class.last]="last">
+          <span class="edu-period mono teal">{{ e.period }}</span>
+          <strong class="edu-course">{{ e.course }}</strong>
+          <p class="edu-inst muted">{{ e.institution }}</p>
+          <span class="edu-badge mono" [class.ongoing]="e.status === 'Em andamento'">
+            {{ e.status }}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

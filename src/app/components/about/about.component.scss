@@ -1,0 +1,148 @@
+$mono: 'JetBrains Mono', monospace;
+$accent: #7c5cfc;
+$teal: #00d4aa;
+$muted: #6b6b8a;
+$border: rgba(120, 100, 255, 0.12);
+$card: #0f0f1c;
+$bg2: #0d0d18;
+$bg: #0a0a0f;
+$text: #e8e8f2;
+
+.section {
+  background-color: $bg;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.about-text {
+  p {
+    font-size: 1.15rem;
+    color: $text;
+    line-height: 2.1;
+    margin-bottom: 1.25rem;
+
+    strong { color: $accent; font-weight: 700; }
+  }
+
+  button {
+    margin-top: 1.8rem;
+    background: linear-gradient(135deg, #7c5cfc 0%, #00d4aa 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+
+    mat-icon {
+      margin-right: 0.6rem;
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-card {
+  background: $card;
+  border: 1px solid $border;
+  border-left: 2px solid $accent;
+  padding: 1.25rem;
+
+  .stat-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $accent;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: $muted;
+    line-height: 1.4;
+  }
+}
+
+.edu-card {
+  background: $card;
+  border: 1px solid $border;
+  padding: 1.5rem;
+}
+
+.edu-header {
+  font-size: 0.72rem;
+  color: $muted;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.04em;
+}
+
+.edu-item {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid $border;
+  margin-bottom: 1.25rem;
+
+  &.last {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+.edu-period {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.edu-course {
+  display: block;
+  font-size: 0.92rem;
+  color: $text;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.edu-inst {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.edu-badge {
+  font-size: 0.68rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid $border;
+  color: $muted;
+
+  &.ongoing {
+    border-color: rgba($teal, 0.35);
+    color: $teal;
+  }
+}

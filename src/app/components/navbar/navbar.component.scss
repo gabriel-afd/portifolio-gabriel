@@ -1,0 +1,80 @@
+$mono: 'JetBrains Mono', monospace;
+$accent: #7c5cfc;
+$teal: #00d4aa;
+$muted: #6b6b8a;
+$border: rgba(120, 100, 255, 0.12);
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 1.5rem;
+  height: 100px;
+  transition: box-shadow 0.3s;
+  display: flex;
+  justify-content: center;
+
+  .toolbar-content {
+    width: min(1200px, 100%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &.scrolled {
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 970px) { padding: 0 0.5rem !important; }
+}
+
+.logo {
+  font-size: 2rem;
+  color: #e8e8f2;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 0.5rem;
+
+  @media (max-width: 970px) { display: none; }
+}
+
+.menu-btn {
+  display: none;
+  @media (max-width: 970px) { display: flex; }
+}
+
+.mobile-menu {
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.7);
+  border-bottom: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.25rem;
+  z-index: 99;
+  transform: translateY(-110%);
+  transition: transform 0.25s ease;
+
+  &.open { transform: translateY(0); }
+
+}
+
+::ng-deep .mat-mdc-button .mat-mdc-button-ripple,
+::ng-deep .mat-mdc-button .mat-mdc-button-persistent-ripple,
+::ng-deep .mat-mdc-button .mat-mdc-button-persistent-ripple::before {
+  display: none !important;
+}

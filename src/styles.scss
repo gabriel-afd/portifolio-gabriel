@@ -1,1 +1,167 @@
-/* You can add global styles to this file, and also import other style files */
+// ─── Variables ───────────────────────────────────────────────────────────────
+$bg:      #0a0a0f;
+$bg2:     #0d0d18;
+$bg3:     #111120;
+$card:    #0f0f1c;
+$border:  rgba(120, 100, 255, 0.12);
+$accent:  #7c5cfc;
+$teal:    #00d4aa;
+$pink:    #fc5c7d;
+$text:    #e8e8f2;
+$muted:   #6b6b8a;
+$mono:    'JetBrains Mono', monospace;
+$display: 'Syne', sans-serif;
+
+// ─── Angular Material Dark Theme ─────────────────────────────────────────────
+@use '@angular/material' as mat;
+
+// Define o tema usando a nova API
+html {
+  color-scheme: light dark; // Para suportar modo claro/escuro automático
+  @include mat.theme((
+    color: (
+      primary: mat.$violet-palette,
+      tertiary: mat.$cyan-palette, // 'accent' foi renomeado para 'tertiary'
+      theme-type: dark, // Define como tema escuro
+    ),
+    typography: (
+      brand-family: 'Syne', // Para títulos
+      plain-family: 'JetBrains Mono', // Para texto comum
+    ),
+    density: 0,
+  ));
+}
+
+// ─── Reset & Base ─────────────────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font-family: 'Syne', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Scanlines overlay
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(124, 92, 252, 0.012) 3px,
+    rgba(124, 92, 252, 0.012) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+// ─── Utility Classes ──────────────────────────────────────────────────────────
+.mono    { font-family: $mono !important; }
+.hash    { color: $accent; }
+.teal    { color: $teal; }
+.pink    { color: $pink; }
+.muted   { color: $muted; }
+.spacer  { flex: 1 1 auto; }
+
+.section {
+  padding: 6rem 5rem;
+
+  @media (max-width: 900px) { padding: 4rem 1.5rem; }
+  @media (max-width: 600px) { padding: 3rem 1rem; }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-family: $mono;
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 400;
+    color: $text;
+    white-space: nowrap;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $border;
+    max-width: 240px;
+  }
+}
+
+// ─── Scrollbar ────────────────────────────────────────────────────────────────
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: $bg; }
+::-webkit-scrollbar-thumb { background: rgba(124, 92, 252, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 92, 252, 0.5); }
+
+// ─── Material Overrides ───────────────────────────────────────────────────────
+.mat-mdc-card {
+  background: $card !important;
+  border: 1px solid $border !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.mat-mdc-chip {
+  font-family: $mono !important;
+  font-size: 0.7rem !important;
+  background: rgba(124, 92, 252, 0.08) !important;
+  border: 1px solid rgba(124, 92, 252, 0.2) !important;
+  color: $muted !important;
+  height: 26px !important;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background: $accent !important;
+  font-family: $mono !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em !important;
+  border-radius: 2px !important;
+}
+
+.mat-mdc-outlined-button, .mat-mdc-stroked-button {
+  font-family: $mono !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em !important;
+  border-radius: 2px !important;
+  border-color: $border !important;
+  color: $muted !important;
+
+  &:hover { border-color: $teal !important; color: $teal !important; }
+}
+
+.mat-mdc-button {
+  font-family: $mono !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.1em !important;
+  color: $muted !important;
+
+  &:hover { color: $teal !important; }
+}
+
+.mat-toolbar {
+  background: rgba($bg, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid $border !important;
+  font-family: $mono !important;
+}
+
+.mat-mdc-icon-button {
+  color: $muted !important;
+  &:hover { color: $teal !important; }
+}

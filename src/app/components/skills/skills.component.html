@@ -1,0 +1,29 @@
+<div class="section skills-section">
+  <div class="section-header">
+    <h2><span class="hash">#</span>skills</h2>
+  </div>
+
+  <div class="groups-wrapper">
+    <div class="skill-group" *ngFor="let group of skillGroups">
+      <h3 class="group-label mono">{{ group.group }}</h3>
+      <div class="skill-grid">
+        <div
+          class="skill-item"
+          *ngFor="let skill of group.skills"
+          [matTooltip]="skill.name"
+          matTooltipPosition="above"
+          matRipple
+          [matRippleColor]="'rgba(124,92,252,0.08)'">
+          <ng-container *ngIf="skill.icon && skill.icon.endsWith('.svg'); else textIcon">
+            <img class="skill-icon-img" [src]="skill.icon" [alt]="skill.name" />
+          </ng-container>
+          <ng-template #textIcon>
+            <span class="skill-icon">{{ skill.icon }}</span>
+          </ng-template>
+          <span class="skill-name mono">{{ skill.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,48 @@
+<div class="hero-wrapper">
+  <div class="grid-bg"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-label mono">
+        <span class="dot"></span>
+      </div>
+
+      <h1>
+        Gabriel Medeiros<br>
+        <span class="accent">Full-Stack</span>
+        <span class="teal"> Developer</span>
+      </h1>
+
+      <p class="hero-sub">
+        Ênfase em <strong>Java + Spring Boot</strong>,
+        <strong>ASP Net Core</strong> e
+        <strong>Angular</strong><br>
+        Engenheiro Mecânico que migrou para o mundo do software.
+      </p>
+
+      <div class="btn-group">
+        <button mat-raised-button color="primary" (click)="scrollTo('projetos')">
+          <mat-icon>rocket_launch</mat-icon>
+          Ver Projetos
+        </button>
+        <button mat-stroked-button (click)="scrollTo('contato')">
+          Contato
+        </button>
+      </div>
+
+    </div>
+
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-top">
+          <span class="dot-r"></span>
+          <span class="dot-y"></span>
+          <span class="dot-g"></span>
+          <span class="filename mono">developer.profile.ts</span>
+        </div>
+        <pre class="code-body mono">{{ displayedCode }}<span class="cursor">▌</span></pre>
+      </div>
+    </div>
+
+  </div>
+</div>

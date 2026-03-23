@@ -1,0 +1,31 @@
+<mat-toolbar [class.scrolled]="isScrolled">
+  <div class="toolbar-content">
+    <span class="logo mono" role="button" (click)="scrollTo('home')">
+      G<span class="teal">.</span>Medeiros
+    </span>
+
+    <span class="spacer"></span>
+
+  <nav class="desktop-nav">
+    <button
+      mat-button
+        *ngFor="let item of navItems"
+        (click)="scrollTo(item.anchor)">
+        <span class="hash">#</span>{{item.label}}
+    </button>
+  </nav>
+
+  <button mat-icon-button class="menu-btn" (click)="toggleMenu()">
+    <mat-icon>{{mobileMenuOpen ? 'close': 'menu'}}</mat-icon>
+  </button>
+  </div>
+</mat-toolbar>
+
+<div class="mobile-menu" [class.open]="mobileMenuOpen">
+  <button
+  mat-button
+    *ngFor="let item of navItems"
+    (click)="scrollTo(item.anchor)">
+    <span class="hash">#</span>{{ item.label }}
+  </button>
+</div>

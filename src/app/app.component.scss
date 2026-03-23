@@ -1,0 +1,28 @@
+$bg: #0a0a0f;
+
+main > section {
+
+}
+
+.site-footer {
+  padding: 2rem 5rem;
+  border-top: 1px solid rgba(120, 100, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #6b6b8a;
+  background-color: $bg;
+
+  .footer-links {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="section">
+  <div class="section-header">
+    <h2><span class="hash">#</span>experiência</h2>
+  </div>
+
+  <div class="exp-list">
+    <div class="exp-card" *ngFor="let exp of experiences">
+
+      <div class="exo-top">
+        <div>
+          <h3 class="exp-role">{{ exp.role }}</h3>
+          <p class="exp-company mono">
+            <span class="teal">▸</span> {{ exp.company }} — {{ exp.location }}
+          </p>
+        </div>
+        <span class="exp-period mono">{{ exp.period }}</span>
+      </div>
+
+      <p class="exp-desc">{{ exp.description }}</p>
+
+      <mat-chip-set>
+        <mat-chip *ngFor="let tag of exp.tags">{{ tag }}</mat-chip>
+      </mat-chip-set>
+      
+    </div>
+  </div>
+</div>
