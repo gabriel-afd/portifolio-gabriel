@@ -120,6 +120,3 @@ Mantenha as URLs de imagem e PDF consistentes (sem espaços em nomes de arquivo 
 - Disponibilizar dark mode.
 - Refatorar `PortfolioService` para buscar dados via API em vez de hardcoded.
 
-## 📝 Observação final
-
-Se quiser, posso também gerar script de deploy (GitHub Pages, Netlify, Vercel) e README adicional em inglês, com badges de status de build.
