@@ -1,6 +1,6 @@
 ﻿# Portfólio Gabriel Medeiros
 
-Aplicação de portfólio pessoal desenvolvida com Angular (standalone components), apresentando perfil, experiência, projetos, habilidades e contatos.
+Aplicação de portfólio pessoal desenvolvida com Angular + Angular Material, apresentando perfil, experiência, projetos, habilidades e contatos.
 
 ## 📌 Visão geral
 
@@ -86,7 +86,7 @@ Saída: `dist/portifolio-gabriel`.
 - Lista de contatos com ação de clique (whatsapp, email, linkedin, github)
 - Informações atualizadas em `portfolio.service`.
 
-## 💾 Dados de serviço (atualizado)
+## 💾 Dados de serviço 
 
 `src/app/services/portfolio.service.ts` contém funções:
 - `getExperiences()`
@@ -113,10 +113,5 @@ Mantenha as URLs de imagem e PDF consistentes (sem espaços em nomes de arquivo 
 - Botão de contato e download de CV com estilo, hover e fácil clique.
 - Inclusão ou correção de link para WhatsApp: `https://api.whatsapp.com/send?phone=5583996704167`.
 
-## 🚀 Sugestões de evoluções
 
-- Implementar i18n para inglês e português.
-- Adicionar testes unitários e e2e para validações de fluxo.
-- Disponibilizar dark mode.
-- Refatorar `PortfolioService` para buscar dados via API em vez de hardcoded.
 
